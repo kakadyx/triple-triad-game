@@ -2,13 +2,13 @@ import s from "./Slider.module.css";
 
 const Slider = () => {
   return (
-    <section class={s.section}>
-      <div class={s.slider}>
-        <div class={`${s.container} ${s.sliderContent}`}>
-          <h1 class={s.header}>Wow</h1>
-          <h2 class={s.subheader}>Wow.Wow.Wow</h2>
-          <div class={s.call}>
-            <button class={s.button}>Wow</button>
+    <section className={s.section}>
+      <div className={s.slider}>
+        <div className={`${s.container} ${s.sliderContent}`}>
+          <h1 className={s.header}>Wow</h1>
+          <h2 className={s.subheader}>Wow.Wow.Wow</h2>
+          <div className={s.call}>
+            <button className={s.button}>Wow</button>
           </div>
         </div>
       </div>
