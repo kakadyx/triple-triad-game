@@ -1,16 +1,23 @@
+import Container from "../Container";
+import Heading from "../Heading";
 import s from "./Slider.module.css";
 
 const Slider = () => {
   return (
     <section className={s.section}>
       <div className={s.slider}>
-        <div className={`${s.container} ${s.sliderContent}`}>
-          <h1 className={s.header}>Wow</h1>
-          <h2 className={s.subheader}>Wow.Wow.Wow</h2>
+        <Container className={s.sliderContent}>
+          <Heading className={s.header} level={1}>
+            Wow
+          </Heading>
+
+          <Heading level={2} black className={s.subheader}>
+            Wow.Wow.Wow
+          </Heading>
           <div className={s.call}>
             <button className={s.button}>Wow</button>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

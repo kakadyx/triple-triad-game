@@ -1,15 +1,16 @@
+import Container from "../Container";
 import s from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <footer className={s.root}>
-      <div className={s.container}>
+      <Container>
         <div className={s.footerWrap}>
           Coded with
           <span className={s.heart}></span>
           by You
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };
