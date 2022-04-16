@@ -3,7 +3,7 @@ import cn from "classnames";
 import PropTypes from "prop-types";
 import s from "./Heading.module.css";
 
-const Heading = ({ children, level = 1, className, black = false }) => {
+const Heading = ({ children, level, className, black }) => {
   const el = `h${level}`;
   return React.createElement(
     el,
@@ -18,9 +18,16 @@ const Heading = ({ children, level = 1, className, black = false }) => {
 
 Heading.propTypes = {
   children: PropTypes.node.isRequired,
-  level: PropTypes.number,
+  level: PropTypes.oneOf([1, 2, 3, 4, 5]),
   className: PropTypes.string,
   black: PropTypes.bool,
+};
+
+Heading.defaultProps = {
+  level: 1,
+  className: null,
+  black: false,
+  children: null,
 };
 
 export default Heading;

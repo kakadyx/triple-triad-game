@@ -4,14 +4,7 @@ import cn from "classnames";
 
 import s from "./Text.module.css";
 
-const Text = ({
-  element = "div",
-  children,
-  className,
-  strong,
-  italic,
-  disabled,
-}) => {
+const Text = ({ element, children, className, strong, italic, disabled }) => {
   return React.createElement(
     element,
     {
@@ -29,6 +22,20 @@ const Text = ({
 
 Text.propTypes = {
   element: PropTypes.oneOf(["div", "p", "span"]),
+  children: PropTypes.node,
+  className: PropTypes.string,
+  strong: PropTypes.bool,
+  disabled: PropTypes.bool,
+  italic: PropTypes.bool,
+};
+
+Text.defaultProps = {
+  element: "div",
+  children: null,
+  className: null,
+  strong: false,
+  disabled: false,
+  italic: false,
 };
 
 export default Text;
