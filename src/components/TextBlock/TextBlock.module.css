@@ -1,0 +1,11 @@
+.root{
+	background: #f7f7f7;
+	display:flex;
+	justify-content: center;
+	width: 100%;
+	max-width: unset;
+	margin: 0;
+}
+.text{
+	color: crimson
+}
