@@ -1,16 +1,16 @@
-import "./App.css";
+import "./App.scss";
 
 import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Footer from "./components/Footer";
-import TextBlock from "./components/TextBlock";
+import CardsBlock from "./components/CardsBlock";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Slider />
-      <TextBlock />
+      <CardsBlock />
       <Footer />
     </div>
   );

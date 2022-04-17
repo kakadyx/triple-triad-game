@@ -1,7 +1,6 @@
-
-import logoPNG from '../../assets/png/logo.png'
+import logoPNG from "../../assets/png/logo.png";
 import Container from "../Container";
-import s from "./Header.module.css";
+import s from "./Header.module.scss";
 
 const MENU = ["Menu 1", "Menu 2", "Menu 3", "Menu 4"];
 
@@ -10,9 +9,11 @@ const Header = () => {
     <header className={s.root}>
       <div className={s.header}>
         <Container>
-          <div className={s.logo}><img src={logoPNG} alt="" /></div>
+          <div className={s.logo}>
+            <img src={logoPNG} alt="" />
+          </div>
           <ul className={s.nav}>
-            {MENU.map((item,i) => (
+            {MENU.map((item, i) => (
               <li key={i}>
                 <a href="#">{item}</a>
               </li>
