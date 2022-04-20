@@ -71,12 +71,17 @@ const CHARACTERS = [
     isLike: false,
   },
 ];
+
 const CardsBlock = () => {
   const [characters, setCharacters] = useState(CHARACTERS);
   const onLikeClick = (id) => {
     setCharacters((chars) => {
       return chars.map((char) => {
-        if (char.id === id) char.isLike = !char.isLike;
+        if (char.id === id)
+          return {
+            ...char,
+            isLike: !char.isLike,
+          };
         return char;
       });
     });
