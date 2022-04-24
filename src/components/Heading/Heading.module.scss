@@ -6,6 +6,19 @@
 	font-weight: 600;
 	margin: 0px;
 	padding: 0px;
+	&.backline{
+		text-align: center;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 30%;
+			position: relative;
+			border-bottom: 1px solid #aaa;
+			margin: 15px auto 0;
+	}
+	}
+
 }
 
 .level1{
