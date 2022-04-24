@@ -1,0 +1,26 @@
+.root {}
+
+.container{
+	display:flex;
+	flex-direction:column;
+	padding: 50px 0;
+	margin: 0 auto;
+}
+
+.text{
+	text-align: left;
+	margin-right: auto;
+}
+
+.lower-heading{
+	text-align: left;
+	margin-right: auto;
+}
+
+.img{
+	max-height: 400px;
+}
+
+.btn{
+	margin-bottom: 20px;
+}
