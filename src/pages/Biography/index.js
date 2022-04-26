@@ -1,12 +1,15 @@
-import PropTypes from "prop-types";
 import { BIO } from "../../assets/data/constants";
 import Heading from "../../components/Heading";
 import Text from "../../components/Text";
 import Container from "../../components/Container";
-import Button from "../../components/Button";
 import cn from "classnames";
+import { useParams } from "react-router-dom";
+
 import s from "./Biography.module.scss";
-const Biography = ({ id, onBackClick }) => {
+
+const Biography = () => {
+  const { id } = useParams();
+
   const content = BIO[id].map((item, i) => {
     let itemContent;
 
@@ -47,24 +50,7 @@ const Biography = ({ id, onBackClick }) => {
     return itemContent;
   });
 
-  return (
-    <Container className={cn(s.container)}>
-      <Button onClick={onBackClick} black className={s.btn}>
-        Go back
-      </Button>
-      {content}
-    </Container>
-  );
-};
-
-Biography.propTypes = {
-  id: PropTypes.number,
-  onBackClick: PropTypes.func,
-};
-
-Biography.defaultProps = {
-  id: null,
-  onBackClick: null,
+  return <Container className={cn(s.container)}>{content}</Container>;
 };
 
 export default Biography;
