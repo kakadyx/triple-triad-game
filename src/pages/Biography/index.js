@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 import s from "./Biography.module.scss";
 
+const possibleHeadingLevels = ["h1", "h2", "h3", "h4", "h5"];
 const Biography = () => {
   const { id } = useParams();
 
@@ -15,7 +16,7 @@ const Biography = () => {
 
     const { type } = item;
     switch (type) {
-      case type.match(/^[h][1-5]$/)?.input:
+      case possibleHeadingLevels.find((item) => item === type):
         itemContent = (
           <Heading
             level={+type[1]}

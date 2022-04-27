@@ -18,16 +18,16 @@ const Header = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
   const [isSmall, setIsSmall] = useState(false);
   const navigate = useNavigate();
-  const updateScrollHeight = () => {
-    setScrollHeight(window.scrollY);
-  };
 
   useEffect(() => {
+    const updateScrollHeight = () => {
+      setScrollHeight(window.scrollY);
+    };
     window.addEventListener("scroll", updateScrollHeight);
     return () => {
       window.removeEventListener("scroll", updateScrollHeight);
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (scrollHeight > 60) setIsSmall(true);
