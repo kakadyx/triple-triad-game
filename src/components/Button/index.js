@@ -21,8 +21,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   black: false,
-  className: null,
-  onClick: null,
 };
 
 export default Button;

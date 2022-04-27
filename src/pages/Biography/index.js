@@ -6,13 +6,14 @@ import Container from "../../components/Container";
 import Button from "../../components/Button";
 import cn from "classnames";
 import s from "./Biography.module.scss";
+const possibleHeadingLevels = ["h1", "h2", "h3", "h4", "h5"];
 const Biography = ({ id, onBackClick }) => {
   const content = BIO[id].map((item, i) => {
     let itemContent;
 
     const { type } = item;
     switch (type) {
-      case type.match(/^[h][1-5]$/)?.input:
+      case possibleHeadingLevels.find((item) => item === type):
         itemContent = (
           <Heading
             level={+type[1]}

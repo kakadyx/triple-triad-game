@@ -27,9 +27,7 @@ Heading.propTypes = {
 
 Heading.defaultProps = {
   level: 1,
-  className: null,
   black: false,
-  children: null,
   backline: false,
 };
 
