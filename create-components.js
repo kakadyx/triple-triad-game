@@ -29,7 +29,7 @@ createComponents
     return path;
   })
   .then(async (path) => {
-    await fs.writeFile(`${path}/${filename}.modal.scss`, ".root {}", (e) => {
+    await fs.writeFile(`${path}/${filename}.module.scss`, ".root {}", (e) => {
       console.log(e);
     });
   });

@@ -8,7 +8,7 @@ const Heading = ({ children, level, className, black, backline }) => {
   return React.createElement(
     el,
     {
-      className: cn(s.root, className, s[`level${level}`], {
+      className: cn(s.root, s[`level${level}`], className, {
         [s.colorBlack]: black,
         [s.backline]: backline,
       }),
@@ -27,9 +27,7 @@ Heading.propTypes = {
 
 Heading.defaultProps = {
   level: 1,
-  className: null,
   black: false,
-  children: null,
   backline: false,
 };
 
