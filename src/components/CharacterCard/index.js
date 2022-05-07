@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Heading from "../Heading";
 import Text from "../Text";
 import cn from "classnames";
+import { Link } from "react-router-dom";
 import s from "./CharacterCard.module.scss";
-
 const CharacterCard = ({
   id,
   name,
@@ -13,7 +13,6 @@ const CharacterCard = ({
   humanName,
   onLikeClick,
   isLiked,
-  onBioClick,
 }) => {
   const handleClick = () => {
     onLikeClick(id);
@@ -37,9 +36,7 @@ const CharacterCard = ({
             <HeartIcon />
           </div>
           <div className={s.readBio}>
-            <a href="#" onClick={() => onBioClick(id)}>
-              Read bio
-            </a>
+            <Link to={`/bio/${id}`}>Read bio</Link>
           </div>
         </div>
       </div>
@@ -49,6 +46,7 @@ const CharacterCard = ({
 
 CharacterCard.defaultProps = {
   isLiked: false,
+  id: 1113431,
 };
 CharacterCard.propTypes = {
   id: PropTypes.number,
@@ -58,7 +56,6 @@ CharacterCard.propTypes = {
   humanName: PropTypes.string,
   isLiked: PropTypes.bool,
   onLikeClick: PropTypes.func,
-  onBioClick: PropTypes.func,
 };
 
 export default CharacterCard;

@@ -31,8 +31,6 @@ Text.propTypes = {
 
 Text.defaultProps = {
   element: "div",
-  children: null,
-  className: null,
   strong: false,
   disabled: false,
   italic: false,

@@ -1,37 +1,23 @@
 import "./App.scss";
-
-import Header from "./components/Header";
-import Slider from "./components/Slider";
-import Footer from "./components/Footer";
 import Biography from "./pages/Biography";
-import { useState } from "react";
-
-import CardsBlock from "./components/CardsBlock";
+import Main from "./pages/Main";
+import Default from "./layouts/Default";
+import Characters from "./pages/Characters";
+import Contacts from "./pages/Contacts";
+import About from "./pages/About";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [currentCharID, setCurrentCharID] = useState(null);
-  const onBioClick = (id) => {
-    setCurrentCharID(id);
-  };
-  const onBackClick = () => {
-    setCurrentCharID(null);
-  };
-  const content =
-    currentCharID !== null ? (
-      <Biography onBackClick={onBackClick} id={currentCharID} />
-    ) : (
-      <>
-        <Slider />
-        <CardsBlock onBioClick={onBioClick} />
-        <Footer />
-      </>
-    );
-
   return (
-    <div className="App">
-      <Header />
-      {content}
-    </div>
+    <Routes>
+      <Route path="/" element={<Default />}>
+        <Route index element={<Main />}></Route>
+        <Route path="bio/:id" element={<Biography />}></Route>
+        <Route path="characters" element={<Characters />}></Route>
+        <Route path="contacts" element={<Contacts />}></Route>
+        <Route path="about" element={<About />}></Route>
+      </Route>
+    </Routes>
   );
 }
 

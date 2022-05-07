@@ -5,7 +5,7 @@ import { useState } from "react";
 import { CHARACTERS } from "../../assets/data/constants";
 import s from "./CardsBlock.module.scss";
 
-const CardsBlock = ({ onBioClick }) => {
+const CardsBlock = () => {
   const [characters, setCharacters] = useState(CHARACTERS);
   const onLikeClick = (id) => {
     setCharacters((chars) => {
@@ -34,7 +34,6 @@ const CardsBlock = ({ onBioClick }) => {
           return (
             <div key={character.id}>
               <CharacterCard
-                onBioClick={onBioClick}
                 id={character.id}
                 name={character.name}
                 humanName={character.humanName}
