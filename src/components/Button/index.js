@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 import s from "./Button.module.scss";
 
-const Button = ({ black, children, className, onClick }) => {
+const Button = ({ black, children, className, handleClick }) => {
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className={cn(s.button, { [s.black]: black }, className)}
     >
       {children}

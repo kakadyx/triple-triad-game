@@ -38,6 +38,8 @@
 	transition: font-size 0.2s linear;
 }
 
+
+
 .nav li {
 	position: relative;
 }
@@ -55,7 +57,9 @@
 	color: initial;
 	text-decoration: initial;
 }
-
+.nav .active{
+	color: red;
+}
 .header.small .logo {
 	width: 89px;
 	height: 50px;
