@@ -8,10 +8,10 @@ import cn from "classnames";
 import s from "./Header.module.scss";
 
 const MENU = [
-  { text: "Main", link: "#" },
-  { text: "Characters", link: "characters" },
-  { text: "Contacts", link: "contacts" },
-  { text: "About", link: "about" },
+  { text: "Main", link: "/" },
+  { text: "Characters", link: "/characters" },
+  { text: "Contacts", link: "/contacts" },
+  { text: "About", link: "/about" },
 ];
 
 const Header = () => {
@@ -48,7 +48,7 @@ const Header = () => {
           <ul className={s.nav}>
             {MENU.map((item, i) => (
               <li key={i}>
-                <Link to={`/${item.link}`}>{item.text}</Link>
+                <Link to={`${item.link}`}>{item.text}</Link>
               </li>
             ))}
           </ul>
