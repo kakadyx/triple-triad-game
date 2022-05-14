@@ -3,33 +3,36 @@ import Heading from "../../components/Heading";
 import Text from "../../components/Text";
 import Container from "../../components/Container";
 import cn from "classnames";
-import { Navigate, useParams, useNavigate, useLocation  } from "react-router-dom";
+import {
+  Navigate,
+  useParams,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import Button from "../../components/Button";
 import { ReactComponent as LinkIcon } from "../../assets/svg/link_icon.svg";
 import s from "./Biography.module.scss";
-import {useEffect} from 'react'
+import { useEffect } from "react";
 const possibleHeadingLevels = ["h1", "h2", "h3", "h4", "h5"];
 const Biography = () => {
   const { id } = useParams();
-	const {pathname, hash, key } = useLocation()
+  const { pathname, hash, key } = useLocation();
   const navigate = useNavigate();
-	useEffect(() => {
-    if (hash === '') {
+  useEffect(() => {
+    if (hash === "") {
       window.scrollTo(0, 0);
-    }
-    else {
+    } else {
       setTimeout(() => {
-
-        const hashId = hash.replace('#', '');
+        const hashId = hash.replace("#", "");
 
         const element = document.getElementById(hashId);
-				console.log(element)
+        console.log(element);
         if (element) {
-					smoothScroll(element)
+          smoothScroll(element);
         }
       }, 1000);
     }
-  }, [pathname, hash, key])
+  }, [pathname, hash, key]);
   const handleGoBackClick = () => {
     navigate(-1);
   };
@@ -42,8 +45,7 @@ const Biography = () => {
       block: "center",
       behavior: "smooth",
     });
-  }
-
+  };
 
   const content = BIO[id].map((item, i) => {
     let itemContent;
@@ -54,22 +56,23 @@ const Biography = () => {
         itemContent = (
           <Heading
             level={+type[1]}
-						id={item.text}
+            id={item.text}
             black
             key={i}
             className={cn({ [s["lower-heading"]]: /^[h][2-5]$/.test(type) })}
           >
             {item.text}
-						<a href={'#'+item.text.replaceAll(' ', '')}
-						onClick={(e) =>{
-							e.preventDefault()
-							smoothScroll(e.target)}}
-							 id={item.text.replaceAll(' ', '')} key={item.text}>
-							<LinkIcon
-								className={s.linkIcon}
-							/>
-						</a>
-
+            <a
+              href={"#" + item.text.replaceAll(" ", "")}
+              onClick={(e) => {
+                e.preventDefault();
+                smoothScroll(e.target);
+              }}
+              id={item.text.replaceAll(" ", "")}
+              key={item.text}
+            >
+              <LinkIcon className={s.linkIcon} />
+            </a>
           </Heading>
         );
         break;
