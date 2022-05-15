@@ -8,6 +8,7 @@ import {
   useParams,
   useNavigate,
   useLocation,
+	Link
 } from "react-router-dom";
 import Button from "../../components/Button";
 import { ReactComponent as LinkIcon } from "../../assets/svg/link_icon.svg";
@@ -62,17 +63,17 @@ const Biography = () => {
             className={cn({ [s["lower-heading"]]: /^[h][2-5]$/.test(type) })}
           >
             {item.text}
-            <a
-              href={"#" + item.text.replaceAll(" ", "")}
+            <Link
+              to={"#" + item.text.replaceAll(" ", "")}
               onClick={(e) => {
-                e.preventDefault();
+
                 smoothScroll(e.target);
               }}
               id={item.text.replaceAll(" ", "")}
               key={item.text}
             >
               <LinkIcon className={s.linkIcon} />
-            </a>
+            </Link>
           </Heading>
         );
         break;
