@@ -6,6 +6,8 @@ import Characters from "./pages/Characters";
 import Contacts from "./pages/Contacts";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import NoHeader from "./layouts/NoHeader";
+import Login from "./pages/Login";
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -25,6 +27,9 @@ function App() {
         <Route path="about" element={<About />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Route>
+			<Route path="/login" element={<NoHeader />}>
+				<Route path="" element={<Login />}/>
+			</Route>
     </Routes>
   );
 }
