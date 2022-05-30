@@ -36,7 +36,7 @@ const CharacterCard = ({
             <HeartIcon />
           </div>
           <div className={s.readBio}>
-            <Link to={`/bio/${id}`}>Read bio</Link>
+            <Link to={`/characters/${id}`}>Read bio</Link>
           </div>
         </div>
       </div>

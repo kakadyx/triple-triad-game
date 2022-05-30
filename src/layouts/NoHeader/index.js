@@ -1,15 +1,14 @@
-import Header from "../../components/Header";
+
 import Footer from "../../components/Footer";
 import { Outlet } from "react-router-dom";
-import s from "./Default.module.scss";
+import s from "./NoHeader.module.scss";
 
-const Default = () => {
+const NoHeader = () => {
   return (
     <div className={s.root}>
-      <Header></Header>
       <Outlet />
       <Footer></Footer>
     </div>
   );
 };
-export default Default;
+export default NoHeader;

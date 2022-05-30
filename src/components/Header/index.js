@@ -1,7 +1,7 @@
 import logoPNG from "../../assets/png/logo.png";
 
 import Container from "../Container";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import cn from "classnames";
@@ -48,7 +48,13 @@ const Header = () => {
           <ul className={s.nav}>
             {MENU.map((item, i) => (
               <li key={i}>
-                <Link to={`${item.link}`}>{item.text}</Link>
+
+                <NavLink
+                  to={`/${item.link}`}
+                  className={({ isActive }) => (isActive ? s.active : null)}
+                >
+                  {item.text}
+                </NavLink>
               </li>
             ))}
           </ul>
