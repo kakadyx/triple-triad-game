@@ -1,12 +1,21 @@
 import Container from "../Container";
 import Heading from "../Heading";
 import CharacterCard from "../CharacterCard";
-import { useState } from "react";
-import { CHARACTERS } from "../../assets/data/constants";
+import { useEffect,useContext } from "react";
 import s from "./CardsBlock.module.scss";
 
+import { CharContext } from "../../App";
+
 const CardsBlock = () => {
-  const [characters, setCharacters] = useState(CHARACTERS);
+	const [characters, setCharacters] = useContext(CharContext)
+
+	useEffect(() => {
+
+      window.localStorage.setItem('characters', JSON.stringify(characters))
+
+
+	},[characters])
+
   const onLikeClick = (id) => {
     setCharacters((chars) => {
       return chars.map((char) => {
