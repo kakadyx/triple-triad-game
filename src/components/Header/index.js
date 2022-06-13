@@ -50,7 +50,7 @@ const Header = () => {
               <li key={i}>
 
                 <NavLink
-                  to={`/${item.link}`}
+                  to={`${item.link}`}
                   className={({ isActive }) => (isActive ? s.active : null)}
                 >
                   {item.text}
